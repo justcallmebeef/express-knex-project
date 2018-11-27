@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Beef", 
+        "fave_animal": "https://palsawa.com/img/Jukcg.jpg",
+        "previous_occupation": "",
+        "hometown_lat": 45.0586,
+        "hometown_long": 92.1724,
+        "useless_superpower": "Fly, but only two feet off the ground"
+    },
+    {
+        "name": "Ben",
+        "fave_animal": "https://kids.nationalgeographic.com/content/dam/kids/photos/animals/Mammals/A-G/cheetah-running.adapt.945.1.jpg",
+        "previous_occupation": "Sales Associate",
+        "hometown_lat": 39.7392,
+        "hometown_long": 104.9903,
+        "useless_superpower": "night vision in day time"
+    },
+    
+]
