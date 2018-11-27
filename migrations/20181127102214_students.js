@@ -5,8 +5,8 @@ exports.up = function(knex, Promise) {
         student.string('name')
         student.string('fave_animal')
         student.string('previous_occupation')
-        student.integer('hometown_lat')
-        student.integer('hometown_long')
+        student.decimal('hometown_lat')
+        student.decimal('hometown_long')
         student.string('useless_superpower')
     })
 };
