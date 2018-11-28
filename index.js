@@ -21,4 +21,13 @@ app.post('/', (req, res) => {
     queries.createStudent(req.body).then(students => res.send(students[0]))
 })
 
+app.use((req, res, next) => {
+    res.status(404).json({ error: { message: 'data not found' }})
+  })
+ 
+ app.use((err, req, res, next) => {
+    const status = err.status || 500
+    res.status(status).json({ error: err})
+  })
+
 app.listen(port, console.log(`listening on port ${port}`))
