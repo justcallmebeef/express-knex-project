@@ -10,5 +10,9 @@ module.exports = {
         // Below does the same thing - I used .first() because it returns an object vs. an id
         // return database('students').where('id', id)
         // return database.select().from('students').where('id', id)
+    }, 
+
+    createStudent(newStudent) {
+        return database('students').insert(newStudent).returning('*')
     }
 }
