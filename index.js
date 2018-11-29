@@ -13,12 +13,18 @@ app.get('/', (req, res) => {
 })
 
 app.get('/:id', (req, res) => {
-    const id = req.params.id
+    let id = req.params.id
     queries.getById(id).then(response => res.send(response))
 })
 
 app.post('/', (req, res) => {
     queries.createStudent(req.body).then(students => res.send(students[0]))
+})
+
+app.delete('/:id', (req, res) => {
+    let id = req.params.id
+    queries.deleteStudent(id)
+    .then(res.status(204).send('done'))
 })
 
 app.use((req, res, next) => {
