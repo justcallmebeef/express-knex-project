@@ -30,7 +30,6 @@ app.delete('/:id', (req, res) => {
 app.put('/:id', (req, res) => {
     let id = req.params.id
     let body = req.body 
-    console.log(body)
     queries.updateStudent(id, body).then(data => res.json(data))
 })
 
