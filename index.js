@@ -27,13 +27,20 @@ app.delete('/:id', (req, res) => {
     .then(res.status(204).send('done'))
 })
 
+app.put('/:id', (req, res) => {
+    let id = req.params.id
+    let body = req.body 
+    console.log(body)
+    queries.updateStudent(id, body).then(data => res.json(data))
+})
+
 app.use((req, res, next) => {
     res.status(404).json({ error: { message: 'data not found' }})
-  })
+})
  
  app.use((err, req, res, next) => {
     const status = err.status || 500
     res.status(status).json({ error: err})
-  })
+})
 
 app.listen(port, console.log(`listening on port ${port}`))
