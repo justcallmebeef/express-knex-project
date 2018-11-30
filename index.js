@@ -23,14 +23,14 @@ app.post('/', (req, res) => {
 
 app.delete('/:id', (req, res) => {
     let id = req.params.id
-    queries.deleteStudent(id)
-    .then(res.status(204).send('done'))
+    queries.deleteStudent(id).then(res.status(204).send('done'))
+    // .then(res.sendStatus(204)) <-- This could also be used for the .then
 })
 
 app.put('/:id', (req, res) => {
     let id = req.params.id
     let body = req.body 
-    queries.updateStudent(id, body).then(data => res.json(data))
+    queries.updateStudent(id, body).then(data => res.json(data[0]))
 })
 
 app.use((req, res, next) => {

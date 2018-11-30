@@ -7,7 +7,7 @@ module.exports = {
 
     getById(id) {
         return database('students').where({id: id}).first() 
-        // Below does the same thing - I used .first() because it returns an object vs. an id
+        // Below does the same thing - I used .first() because it returns an object vs. an array
         // return database('students').where('id', id)
         // return database.select().from('students').where('id', id)
     }, 
@@ -21,6 +21,6 @@ module.exports = {
     }, 
 
     updateStudent(id, student) {
-        return database('students').where('id', id).update(student)
+        return database('students').where('id', id).update(student).returning('*')
     }
 }
